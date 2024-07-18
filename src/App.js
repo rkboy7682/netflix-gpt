@@ -1,11 +1,8 @@
 import "./App.css";
+import Body from "./Components/Body";
 
 function App() {
-  return (
-    <div className="font-extrabold text-4xl">
-      <h1>Netflix</h1>
-    </div>
-  );
+  return <Body />;
 }
 
 export default App;

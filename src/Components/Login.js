@@ -1,11 +1,21 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Header from "./Header";
+import { validate } from "../utils/validate";
 
 const Login = () => {
   const [IsSignIn, setIsSignIn] = useState(true);
+  const [errorMessage, seterrorMessage] = useState(null);
+  const email = useRef(null);
+  const password = useRef(null);
 
   const handleToggelForm = () => {
     setIsSignIn(!IsSignIn);
+  };
+
+  const handleValidate = () => {
+    const message = validate(email.current.value, password.current.value);
+    console.log(message);
+    seterrorMessage(message);
   };
 
   return (
@@ -17,7 +27,12 @@ const Login = () => {
           alt="background-logo"
         />
       </div>
-      <form className=" w-3/12 absolute my-36 mx-auto right-0 left-0 p-10 px-20 bg-black bg-gradient-to-t bg-opacity-80">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+        className=" w-3/12 absolute my-36 mx-auto right-0 left-0 p-10 px-20 bg-black bg-gradient-to-t bg-opacity-80"
+      >
         <h1 className=" font-bold text-white text-3xl py-6">
           {IsSignIn ? "Sign In" : "Sign up"}
         </h1>
@@ -31,16 +46,22 @@ const Login = () => {
         )}
 
         <input
-          className="p-4 m-2 border-slate-500 border-2 bg-slate-600 h-12 rounded-sm w-full bg-opacity-5"
+          ref={email}
+          className="p-4 m-2 text-white border-slate-500 border-2 bg-slate-600 h-12 rounded-sm w-full bg-opacity-5"
           type="text"
           placeholder="Email or mobile number"
         />
         <input
-          className="p-4 m-2  border-slate-500  bg-slate-600 border-2 h-12 rounded-sm w-full bg-opacity-5"
+          ref={password}
+          className="p-4 m-2 text-white border-slate-500  bg-slate-600 border-2 h-12 rounded-sm w-full bg-opacity-5"
           type="password"
           placeholder="Password"
         />
-        <button className=" p-2 m-2 rounded-md bg-red-600 text-white text-center w-full">
+        <p className="text-red-600 font-semibold text-2xl">{errorMessage}</p>
+        <button
+          className=" p-2 m-2 rounded-md bg-red-600 text-white text-center w-full"
+          onClick={handleValidate}
+        >
           {IsSignIn ? "Sign In" : "Sign up"}
         </button>
         <p

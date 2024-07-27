@@ -7,6 +7,7 @@
 - Login Form
 - Sign Up form
 - Form validation
+  - regex for validation email and password
 - UseRef hook
 
 # Features

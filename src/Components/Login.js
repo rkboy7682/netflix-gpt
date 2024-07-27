@@ -7,13 +7,18 @@ const Login = () => {
   const [errorMessage, seterrorMessage] = useState(null);
   const email = useRef(null);
   const password = useRef(null);
+  const name = useRef(null);
 
   const handleToggelForm = () => {
     setIsSignIn(!IsSignIn);
   };
 
   const handleValidate = () => {
-    const message = validate(email.current.value, password.current.value);
+    const message = validate(
+      email.current.value,
+      password.current.value,
+      name.current.value
+    );
     console.log(message);
     seterrorMessage(message);
   };
@@ -39,7 +44,8 @@ const Login = () => {
 
         {!IsSignIn && (
           <input
-            className="p-4 m-2 border-slate-500 border-2 bg-slate-600 h-12 rounded-sm w-full bg-opacity-5"
+            ref={name}
+            className="p-4 m-2 border-slate-500 border-2 text-white bg-slate-600 h-12 rounded-sm w-full bg-opacity-5"
             type="text"
             placeholder="Full name"
           />
@@ -60,7 +66,7 @@ const Login = () => {
         <p className="text-red-600 font-semibold text-2xl">{errorMessage}</p>
         <button
           className=" p-2 m-2 rounded-md bg-red-600 text-white text-center w-full"
-          onClick={handleValidate}
+          onClick={() => handleValidate}
         >
           {IsSignIn ? "Sign In" : "Sign up"}
         </button>

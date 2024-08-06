@@ -1,6 +1,14 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { validate } from "../utils/validate";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import { auth } from "../utils/firebase";
+import { addUser } from "../utils/userSlice";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
   const [IsSignIn, setIsSignIn] = useState(true);
@@ -8,19 +16,71 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null);
+  const dispatch = useDispatch();
 
   const handleToggelForm = () => {
     setIsSignIn(!IsSignIn);
   };
 
   const handleValidate = () => {
-    const message = validate(
-      email.current.value,
-      password.current.value,
-      name.current.value
-    );
+    const message = validate(email.current.value, password.current.value);
     console.log(message);
     seterrorMessage(message);
+    if (message) return;
+
+    if (!IsSignIn) {
+      //sing up logic
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+
+          updateProfile(user, {
+            displayName: name.current.value,
+            photoURL:
+              "https://i.natgeofe.com/n/66ebb94c-8a2c-4127-be21-cc6a658172a7/ST_berlin_GettyImages-1264514235_HR_2x1.jpg",
+          })
+            .then(() => {
+              const { uid, email, displayName, photoURL } = auth.currentUser;
+              dispatch(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
+              );
+            })
+            .catch((error) => {
+              seterrorMessage(error.message);
+            });
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          seterrorMessage(errorCode + "-" + errorMessage);
+        });
+    } else {
+      // sign in logic
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          seterrorMessage(errorMessage + errorCode);
+        });
+    }
   };
 
   return (
@@ -32,6 +92,7 @@ const Login = () => {
           alt="background-logo"
         />
       </div>
+
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -66,7 +127,7 @@ const Login = () => {
         <p className="text-red-600 font-semibold text-2xl">{errorMessage}</p>
         <button
           className=" p-2 m-2 rounded-md bg-red-600 text-white text-center w-full"
-          onClick={() => handleValidate}
+          onClick={handleValidate}
         >
           {IsSignIn ? "Sign In" : "Sign up"}
         </button>

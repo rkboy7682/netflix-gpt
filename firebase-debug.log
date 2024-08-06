@@ -1,0 +1,171 @@
+[debug] [2024-08-06T16:03:14.543Z] ----------------------------------------------------------------------
+[debug] [2024-08-06T16:03:14.545Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Rahul Yadav\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-08-06T16:03:14.546Z] CLI Version:   13.15.0
+[debug] [2024-08-06T16:03:14.547Z] Platform:      win32
+[debug] [2024-08-06T16:03:14.547Z] Node Version:  v18.16.0
+[debug] [2024-08-06T16:03:14.548Z] Time:          Tue Aug 06 2024 21:33:14 GMT+0530 (India Standard Time)
+[debug] [2024-08-06T16:03:14.548Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-08-06T16:03:14.651Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-08-06T16:03:14.652Z] > authorizing via signed-in user (rkboy7682@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\Project\Netfix-gpt\netflix-gpt
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-08-06T16:03:24.561Z] Using project from CLI flag: netflix-f0377
+[debug] [2024-08-06T16:03:24.562Z] > refreshing access token with scopes: []
+[debug] [2024-08-06T16:03:24.564Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-08-06T16:03:24.564Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T16:03:24.988Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 403
+[debug] [2024-08-06T16:03:24.988Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T16:03:24.989Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2024-08-06T16:03:25.273Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (C:\Users\Rahul Yadav\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:140:12)
+    at refreshTokens (C:\Users\Rahul Yadav\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:514:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async getAccessToken (C:\Users\Rahul Yadav\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:40:18)
+    at async Client.addAuthHeader (C:\Users\Rahul Yadav\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:167:21)
+    at async Client.request (C:\Users\Rahul Yadav\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:118:34)
+    at async getFirebaseProject (C:\Users\Rahul Yadav\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:295:21)
+    at async doSetup (C:\Users\Rahul Yadav\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\features\project.js:85:27)
+    at async init (C:\Users\Rahul Yadav\AppData\Roaming\npm\node_modules\firebase-tools\lib\init\index.js:40:9)
+[error] 
+[error] Error: Failed to get Firebase project netflix-f0377. Please make sure the project exists and your account has permission to access it.
+[debug] [2024-08-06T16:03:37.196Z] ----------------------------------------------------------------------
+[debug] [2024-08-06T16:03:37.199Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Rahul Yadav\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-08-06T16:03:37.199Z] CLI Version:   13.15.0
+[debug] [2024-08-06T16:03:37.200Z] Platform:      win32
+[debug] [2024-08-06T16:03:37.200Z] Node Version:  v18.16.0
+[debug] [2024-08-06T16:03:37.201Z] Time:          Tue Aug 06 2024 21:33:37 GMT+0530 (India Standard Time)
+[debug] [2024-08-06T16:03:37.201Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-08-06T16:03:37.308Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-08-06T16:03:37.309Z] > authorizing via signed-in user (rkboy7682@gmail.com)
+[debug] [2024-08-06T16:03:37.309Z] [iam] checking project netflix-f0377 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-08-06T16:03:37.311Z] > refreshing access token with scopes: []
+[debug] [2024-08-06T16:03:37.314Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-08-06T16:03:37.314Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T16:03:37.661Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 403
+[debug] [2024-08-06T16:03:37.662Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T16:03:37.662Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2024-08-06T16:03:37.663Z] > refreshing access token with scopes: []
+[debug] [2024-08-06T16:03:37.664Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-08-06T16:03:37.664Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T16:03:37.986Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 403
+[debug] [2024-08-06T16:03:37.986Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T16:03:37.987Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
+[debug] [2024-08-06T16:05:22.717Z] ----------------------------------------------------------------------
+[debug] [2024-08-06T16:05:22.720Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Rahul Yadav\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-08-06T16:05:22.721Z] CLI Version:   13.15.0
+[debug] [2024-08-06T16:05:22.721Z] Platform:      win32
+[debug] [2024-08-06T16:05:22.721Z] Node Version:  v18.16.0
+[debug] [2024-08-06T16:05:22.722Z] Time:          Tue Aug 06 2024 21:35:22 GMT+0530 (India Standard Time)
+[debug] [2024-08-06T16:05:22.723Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-08-06T16:05:22.831Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-08-06T16:05:22.832Z] > authorizing via signed-in user (rkboy7682@gmail.com)
+[debug] [2024-08-06T16:05:22.832Z] [iam] checking project netflix-f0377 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-08-06T16:05:22.834Z] > refreshing access token with scopes: []
+[debug] [2024-08-06T16:05:22.837Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-08-06T16:05:22.837Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T16:05:23.270Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 403
+[debug] [2024-08-06T16:05:23.271Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T16:05:23.271Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2024-08-06T16:05:23.272Z] > refreshing access token with scopes: []
+[debug] [2024-08-06T16:05:23.272Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-08-06T16:05:23.273Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T16:05:23.568Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 403
+[debug] [2024-08-06T16:05:23.568Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T16:05:23.568Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
+[debug] [2024-08-06T16:05:46.964Z] ----------------------------------------------------------------------
+[debug] [2024-08-06T16:05:46.967Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Rahul Yadav\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-08-06T16:05:46.967Z] CLI Version:   13.15.0
+[debug] [2024-08-06T16:05:46.968Z] Platform:      win32
+[debug] [2024-08-06T16:05:46.968Z] Node Version:  v18.16.0
+[debug] [2024-08-06T16:05:46.969Z] Time:          Tue Aug 06 2024 21:35:46 GMT+0530 (India Standard Time)
+[debug] [2024-08-06T16:05:46.969Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-08-06T16:05:47.072Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-08-06T16:05:47.073Z] > authorizing via signed-in user (rkboy7682@gmail.com)
+[debug] [2024-08-06T16:05:47.073Z] [iam] checking project netflix-f0377 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-08-06T16:05:47.075Z] > refreshing access token with scopes: []
+[debug] [2024-08-06T16:05:47.077Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-08-06T16:05:47.078Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T16:05:47.493Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 403
+[debug] [2024-08-06T16:05:47.493Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T16:05:47.494Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2024-08-06T16:05:47.494Z] > refreshing access token with scopes: []
+[debug] [2024-08-06T16:05:47.495Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-08-06T16:05:47.495Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T16:05:47.823Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 403
+[debug] [2024-08-06T16:05:47.824Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T16:05:47.824Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
+[debug] [2024-08-06T18:10:53.836Z] ----------------------------------------------------------------------
+[debug] [2024-08-06T18:10:53.839Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Rahul Yadav\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-08-06T18:10:53.840Z] CLI Version:   13.15.0
+[debug] [2024-08-06T18:10:53.840Z] Platform:      win32
+[debug] [2024-08-06T18:10:53.840Z] Node Version:  v18.16.0
+[debug] [2024-08-06T18:10:53.841Z] Time:          Tue Aug 06 2024 23:40:53 GMT+0530 (India Standard Time)
+[debug] [2024-08-06T18:10:53.842Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-08-06T18:10:53.967Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-08-06T18:10:53.968Z] > authorizing via signed-in user (rkboy7682@gmail.com)
+[debug] [2024-08-06T18:10:53.968Z] [iam] checking project netflix-f0377 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-08-06T18:10:53.970Z] > refreshing access token with scopes: []
+[debug] [2024-08-06T18:10:53.972Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-08-06T18:10:53.973Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T18:10:54.459Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 403
+[debug] [2024-08-06T18:10:54.459Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T18:10:54.460Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2024-08-06T18:10:54.461Z] > refreshing access token with scopes: []
+[debug] [2024-08-06T18:10:54.461Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-08-06T18:10:54.461Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T18:10:54.748Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 403
+[debug] [2024-08-06T18:10:54.748Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-08-06T18:10:54.748Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier

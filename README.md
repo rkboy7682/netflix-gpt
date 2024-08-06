@@ -9,6 +9,14 @@
 - Form validation
   - regex for validation email and password
 - UseRef hook
+- Firebase setup
+- Deploying our app to production
+- Create Signup user Account
+- Implement sign in user Api
+- Created redux store with userSlice
+- Implimented Sign out
+- Update Profile
+- Fetch from TMBD Movies
 
 # Features
 

@@ -16,6 +16,7 @@
 - Created redux store with userSlice
 - Implimented Sign out
 - Update Profile
+<<<<<<< HEAD
 - BugFix: sign-up user name and display profile picture
 - BugFix: If user is no logged in Redirect/Brose to login page and vice-versa
 - unscribed to the onAuthStateChange callback
@@ -25,6 +26,9 @@
 - Make redux Movieslice and store movies
 - Create new folder for custom hooks
   -create custom hook useNowPlayingMovies()
+=======
+- Fetch from TMBD Movies
+>>>>>>> 3ce457db587aae6f0486e0013695b3e93cfee182
 
 # Features
 

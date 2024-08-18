@@ -26,6 +26,12 @@
 - Create new folder for custom hooks
   -create custom hook useNowPlayingMovies()
 - Fetch from TMBD Movies
+- Main Container
+  - videoBackground
+    - Trailer in background
+  - Title & Discription
+  - Movie suggestion
+    - Movie list
 
 # Features
 
@@ -37,11 +43,7 @@
 - Browse (after authentication)
 
   - Header
-  - Main Movies
-    - Trailer in background
-    - Title & Discription
-    - Movie suggestion
-      - Movie list
+  -
 
 - Netflix Gpt
   - SearchBar

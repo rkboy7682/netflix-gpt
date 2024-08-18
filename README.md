@@ -19,7 +19,7 @@
 - BugFix: sign-up user name and display profile picture
 - BugFix: If user is no logged in Redirect/Brose to login page and vice-versa
 - unscribed to the onAuthStateChange callback
-- Add hard coded values to the constant file
+- Add hard coded values to the constant file (PHOTO LINK)
 - login to TMDB and get API key
 - Fetch Api from TMBD
 - Make redux Movieslice and store movies

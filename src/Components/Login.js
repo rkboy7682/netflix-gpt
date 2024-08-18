@@ -7,10 +7,9 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-
-import { useNavigate } from "react-router-dom";
 import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
+import { USER_LOGO } from "../utils/constant";
 
 const Login = () => {
   const [IsSignIn, setIsSignIn] = useState(true);
@@ -18,7 +17,6 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleToggelForm = () => {
@@ -44,11 +42,11 @@ const Login = () => {
 
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL:
-              "https://i.natgeofe.com/n/66ebb94c-8a2c-4127-be21-cc6a658172a7/ST_berlin_GettyImages-1264514235_HR_2x1.jpg",
+            photoURL: { USER_LOGO },
           })
             .then(() => {
-              const { uid, email, displayName, photoURL } = auth.currentUser;
+              const { uid, email, displayName, photoURL } =
+                auth.currentUser; /* i am trying to fetch the updated vaule from auth.currentUser */
               dispatch(
                 addUser({
                   uid: uid,
@@ -57,7 +55,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               seterrorMessage(error.message);
@@ -78,7 +75,6 @@ const Login = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           console.log(user);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;

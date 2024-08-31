@@ -32,18 +32,19 @@
   - Title & Discription
   - Movie suggestion
     - Movie list
+    - nowPlayingMovies
+    - PopolarMovies
+    - TopRatedMovies
+    - upComingMovies
 
 # Features
 
 - Login/Sign up
-
   - Sign up /Sign In form
   - Redirect to Browse page
-
 - Browse (after authentication)
 
   - Header
-  -
 
 - Netflix Gpt
   - SearchBar

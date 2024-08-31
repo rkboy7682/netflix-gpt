@@ -15,9 +15,10 @@ const useTmdbApi = () => {
       "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
       TMDB_API_KEY
     );
+
     const json = await data.json();
-    dispatch(addNowPlayingMovies(json?.results));
-    console.log("json", json);
+    dispatch(addNowPlayingMovies(json.results));
+    console.log("json data from usetmdb", json.results);
   }
 };
 export default useTmdbApi;

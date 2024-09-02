@@ -2,7 +2,7 @@ import React from "react";
 import MoviesCard from "./MoviesCard";
 
 const MoviesList = ({ Title, movies }) => {
-  console.log("from list ", movies);
+  // console.log("from list ", movies);
   if (movies !== null) {
     return (
       <div className="px-6 text-white ">

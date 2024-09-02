@@ -16,7 +16,6 @@ const usePopularMovieApi = () => {
       TMDB_API_KEY
     );
     const json = await data.json();
-    console.log("from popular", json?.results);
     dispatch(addPopularMovies(json?.results));
   }
 

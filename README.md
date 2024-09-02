@@ -36,6 +36,11 @@
     - PopolarMovies
     - TopRatedMovies
     - upComingMovies
+- Netflix Gpt
+  - SearchBar
+  - multilinual functionality
+  - Movie Suggestion
+    Integrate GPT API
 
 # Features
 
@@ -45,7 +50,3 @@
 - Browse (after authentication)
 
   - Header
-
-- Netflix Gpt
-  - SearchBar
-  - Movie Suggestion

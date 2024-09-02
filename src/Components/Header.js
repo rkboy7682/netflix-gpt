@@ -4,12 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { addUser, removeUser } from "../utils/userSlice";
-import { NETFLIX_LOGO } from "../utils/constant";
+import { NETFLIX_LOGO, SUPPORTED_LANG } from "../utils/constant";
+import { toggelGptSerachView } from "../utils/gptSlice";
+import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
   const handleSignOut = () => {
     const auth = getAuth();
     signOut(auth)
@@ -23,6 +26,9 @@ const Header = () => {
       });
   };
 
+  const handleGPT = () => {
+    dispatch(toggelGptSerachView());
+  };
   // bug fixed for redirect
   useEffect(() => {
     // signout, signin sign up , authantication change then it will call
@@ -49,6 +55,11 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
 
+  const handleLangChange = (e) => {
+    // console.log("event", e.target.value);
+    dispatch(changeLanguage(e.target.value));
+  };
+
   return (
     <div className="absolute w-screen bg-gradient-to-b from-black z-30  flex justify-between">
       <img
@@ -67,11 +78,26 @@ const Header = () => {
             alt="netflix-Login"
           />
           <button
+            className="text-white mr-2 border-2 rounded-md font-semibold p-1 m-4 text-sm h-8 mt-2 bg-blue-500 "
+            onClick={handleGPT}
+          >
+            {showGptSearch ? "Home" : "GPT_Search"}
+          </button>
+          <button
             className="rounded-md bg-gray-800 h-8 m-2 p-2 text-slate-200"
             onClick={handleSignOut}
           >
             Sign Out
           </button>
+          {showGptSearch && (
+            <select onChange={handleLangChange}>
+              {SUPPORTED_LANG.map((lang) => (
+                <option key={lang.identifire} value={lang.identifire}>
+                  {lang.name}
+                </option>
+              ))}
+            </select>
+          )}
         </div>
       )}
     </div>

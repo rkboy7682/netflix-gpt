@@ -18,7 +18,6 @@ const useTmdbApi = () => {
 
     const json = await data.json();
     dispatch(addNowPlayingMovies(json.results));
-    console.log("json data from usetmdb", json.results);
   }
 };
 export default useTmdbApi;

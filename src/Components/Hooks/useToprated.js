@@ -15,7 +15,6 @@ const useToprated = () => {
       TMDB_API_KEY
     );
     const json = await data.json();
-    console.log("topratyed", json.results);
     dispatch(addTopratedMovies(json?.results));
   }
 

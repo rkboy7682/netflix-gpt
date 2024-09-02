@@ -15,7 +15,6 @@ const useUpcoming = () => {
       TMDB_API_KEY
     );
     const json = await data.json();
-    console.log("upcoming", json.results);
     dispatch(addUpComingMovies(json.results));
   }
   return <div></div>;

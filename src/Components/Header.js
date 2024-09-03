@@ -72,7 +72,7 @@ const Header = () => {
       {user && (
         <div className="p-6 px-8 flex">
           <img
-            className=" w-12 h-12"
+            className=" w-12 h-12 rounded-full border-2"
             // src={user.photoURL}
             src={user.photoURL}
             alt="netflix-Login"
@@ -84,13 +84,16 @@ const Header = () => {
             {showGptSearch ? "Home" : "GPT_Search"}
           </button>
           <button
-            className="rounded-md bg-gray-800 h-8 m-2 p-2 text-slate-200"
+            className="text-white mr-2 border-2 rounded-md font-semibold p-1 m-4 text-sm h-8 mt-2 bg-blue-500 "
             onClick={handleSignOut}
           >
             Sign Out
           </button>
           {showGptSearch && (
-            <select onChange={handleLangChange}>
+            <select
+              className="text-white mr-2 border-2 rounded-md font-semibold p-1 m-4 text-sm h-8 mt-2 bg-blue-500 "
+              onChange={handleLangChange}
+            >
               {SUPPORTED_LANG.map((lang) => (
                 <option key={lang.identifire} value={lang.identifire}>
                   {lang.name}

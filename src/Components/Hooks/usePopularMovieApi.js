@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { TMDB_API_KEY } from "../../utils/constant";
 import { addPopularMovies } from "../../utils/movieSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const usePopularMovieApi = () => {
   const dispatch = useDispatch();
+  const popularMovies = useSelector((store) => store.movies.popularMovies);
 
   useEffect(() => {
-    PopularMovies();
+    if (!popularMovies) PopularMovies();
   }, []);
 
   async function PopularMovies() {
@@ -16,6 +17,8 @@ const usePopularMovieApi = () => {
       TMDB_API_KEY
     );
     const json = await data.json();
+    console.log(json);
+
     dispatch(addPopularMovies(json?.results));
   }
 

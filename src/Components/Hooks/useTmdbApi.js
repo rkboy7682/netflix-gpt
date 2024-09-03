@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import { TMDB_API_KEY } from "../../utils/constant";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addNowPlayingMovies } from "../../utils/movieSlice";
 
 const useTmdbApi = () => {
   const dispatch = useDispatch();
 
+  const movies = useSelector((store) => store.movies.nowPlayingMovies);
   useEffect(() => {
-    MOVIE_API();
+    if (!movies) MOVIE_API();
   }, []);
 
   async function MOVIE_API() {

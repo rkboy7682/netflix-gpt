@@ -23,3 +23,5 @@ export const SUPPORTED_LANG = [
   { identifire: "spanish", name: "Spanish" },
   { identifire: "arabic", name: "Arabic" },
 ];
+
+export const GEMNI_API_KEY = "AIzaSyDCjSVjC75Ley5JaBCSinG93ocJnScK08k";

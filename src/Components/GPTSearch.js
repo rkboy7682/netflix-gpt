@@ -12,8 +12,10 @@ const GPTSearch = () => {
           alt="background_logo"
         />
       </div>
-      <GptSearchInputBox />
-      <GptMoviesSuggestion />
+      <div className="pt-[90px] md:pt-0">
+        <GptSearchInputBox />
+        <GptMoviesSuggestion />
+      </div>
     </div>
   );
 };

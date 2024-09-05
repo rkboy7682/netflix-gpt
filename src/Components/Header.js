@@ -61,16 +61,16 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-screen bg-gradient-to-b from-black z-30  flex justify-between">
+    <div className="absolute w-screen bg-gradient-to-b from-black z-30  flex justify-between flex-col md:flex-row">
       <img
-        className=" w-44  mx-40 h-[92px] bg-gradient-to-b from-black py-2 "
+        className=" w-44  mx-40 md:mx-40  h-[92px] bg-gradient-to-b from-black py-2 "
         src={NETFLIX_LOGO}
         alt="netflix-logo"
       />
 
       {/* bug fix show update signout  */}
       {user && (
-        <div className="p-6 px-8 flex">
+        <div className="p-6 px-8 flex justify-center -my-8 md:-my-0">
           <img
             className=" w-12 h-12 rounded-full border-2"
             // src={user.photoURL}

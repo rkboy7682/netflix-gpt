@@ -34,38 +34,41 @@ const GptSearchInputBox = () => {
   };
 
   return (
-    <div className=" pt-[16%] h-[900px] ">
+    <div className=" pt-[16%] md:h-[900px]">
       <div>
-        <form
-          className="flex w-1/2 bg-black ml-80 h-14"
-          onSubmit={(e) => e.preventDefault()}
-        >
-          <input
-            className=" w-7/12  border-red-700 text-center"
-            type="text"
-            placeholder={language[langKey].placeholder}
-            onChange={(e) => handleChangeSearch(e)}
-          />
-          <div>
-            <button
-              className=" h-14  w-80 bg-red-500 text-white"
-              onClick={() => handleClick()}
-            >
-              {/* here we make dynamic by useing [langKey] */}
-              {language[langKey].search}
-            </button>
-          </div>
+        <div className=" m-2 pl-16 md:m-0 md:pl-0 -mt-6 md:-mt-0">
+          <form
+            className="flex md:w-1/2 md:ml-80  h-14 w-40  "
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <input
+              className=" md:w-7/12 w-40  text-sm  mr-6 md:mr-0 text-center rounded-md"
+              type="text"
+              placeholder={language[langKey].placeholder}
+              onChange={(e) => handleChangeSearch(e)}
+            />
+            <div>
+              <button
+                className=" h-14 md:w-80 w-20 bg-red-500 text-white rounded-md"
+                onClick={() => handleClick()}
+              >
+                {/* here we make dynamic by useing [langKey] */}
+                {language[langKey].search}
+              </button>
+            </div>
 
-          {/* {loading === true && search !== "" ? (
+            {/* {loading === true && search !== "" ? (
             <p>Loading ...</p>
           ) : (
             <p className="text-white border-2 border-white bg-slate-800 h-96">
               {aiResponse}
             </p>
           )} */}
-        </form>
-        <div className="w-6/12 ml-[320px] mt-4">
-          <p className="text-white border-2  bg-slate-600 h-auto overflow-y-auto">
+          </form>
+        </div>
+
+        <div className="md:w-6/12 md:ml-[320px] md:mt-4  pl-2 -ml-1  md:pl-0 ">
+          <p className="text-white bg-slate-600 h-auto overflow-y-auto ">
             {aiResponse}
           </p>
         </div>

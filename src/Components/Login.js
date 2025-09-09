@@ -101,7 +101,7 @@ const Login = () => {
         className=" w-3/12 absolute my-36 mx-auto right-0 left-0 p-10 px-20 bg-black bg-gradient-to-t bg-opacity-80"
       >
         <h1 className=" font-bold text-white text-3xl py-6">
-          {IsSignIn ? "Sign In" : "Sign up"}
+          {IsSignIn ? "Sign In" : "Sign Up"}
         </h1>
 
         {!IsSignIn && (
